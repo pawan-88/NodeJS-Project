@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
-
 const JWT_SECRET = process.env.JWT_SECRET || 'your_default_secret';
 
 export const register = async (req: Request, res: Response): Promise<Response> => {
@@ -44,5 +43,4 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
     console.error('Login error:', err);
     return res.status(500).json({ message: 'Server error' });
   }
-  
 };
